@@ -1,10 +1,10 @@
 def molkky():
-    nbj = int(input("Quel est le nombre de joueur ? "))
-    nbJoueursRestants = nbj
+    nbj = int(input("Quel est le nombre de joueur ? "))#demande le nombre de joueurs
+    nbJoueursRestants = nbj #met la variable nombre de joueurs restants à nombre de joueurs
     scores = []  # liste des scores
     nomsJoueur = []  # liste des noms des joueurs
     nbZero = []  # sert à nous dire le nombre de zero d'un joueur
-    scoreJoueur = 0
+    scoreJoueur = 0 
     termine = False
     for n in range(nbj):
         nomJoueur = f"Joueur {n+1}"
@@ -17,8 +17,7 @@ def molkky():
             if (nbZero[k] == 3):
                 continue
             numeroJoueur = k+1
-            scoreJoueur = int(
-                input(f"quel est le score du joueur {numeroJoueur} dans ce tour ? "))
+            scoreJoueur = int(input(f"quel est le score du joueur {numeroJoueur} dans ce tour ? "))
             scores[k] += scoreJoueur
             if scores[k] == 50:
                 print(f"le joueur {numeroJoueur} a gagné")
@@ -31,12 +30,13 @@ def molkky():
                 nbZero[k] += 1
                 if nbZero[k] == 3:
                     print(f"le joueur {numeroJoueur} a perdu")
+                    nomsJoueur[k] = None
                     scores[k] = "Elimine"
                     nbJoueursRestants = nbJoueursRestants - 1
                     if nbJoueursRestants == 1:
                         for l in range(nbj):
                             if not (nomsJoueur[l] == None):
-                                print(f"le joueur {nomsJoueur[l]} a gagné")
+                                print(f"le {nomsJoueur[l]} a gagné")
                                 termine = True
                                 break
             for l in range(nbj):
