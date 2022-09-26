@@ -18,7 +18,7 @@ def molkky():
                 continue
             numeroJoueur = k+1
             scoreJoueur = int(
-                input(f"quel est le score du joueur {numeroJoueur} dans ce tour?"))
+                input(f"quel est le score du joueur {numeroJoueur} dans ce tour ? "))
             scores[k] += scoreJoueur
             if scores[k] == 50:
                 print(f"le joueur {numeroJoueur} a gagné")
@@ -43,5 +43,6 @@ def molkky():
                 print(f"Score {nomsJoueur[l]} = {scores[l]}")
             if termine:
                 break
-
+        if termine:
+            break
 molkky()
