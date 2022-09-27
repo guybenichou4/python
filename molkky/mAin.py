@@ -10,7 +10,7 @@ def molkky():
     tablette=[]
     cbreussi=[]
     for n in range(nbj):
-        nomJoueur = f"Joueur {n+1}"
+        nomJoueur = input(f"Comment s'apppelle le joueur {n+1} ? ")
         nomsJoueur.append(nomJoueur)
         scores.append(0)
         nbZero.append(0)
@@ -22,7 +22,7 @@ def molkky():
             if (nbZero[k] == 3):
                 continue
             numeroJoueur = k+1
-            scoref = int(input(f"combien de quille a fait tomber le  joueur {numeroJoueur} dans ce tour ? "))
+            scoref = int(input(f"combien de quille a fait tomber {nomsJoueur[k]}  dans ce tour ? "))
             cbreussi[k] += 1
             if scoref==1:
                 scoreJoueur = int(input("Quel est le score sur la quille ?"))
@@ -32,7 +32,7 @@ def molkky():
                 scoreJoueur=0   
             scores[k] += scoreJoueur
             if scores[k] == 50:
-                print(f"le joueur {numeroJoueur} a gagné en {cbreussi[k]} fois")
+                print(f"{nomsJoueur[k]} a gagné en {cbreussi[k]} fois")
                 break
             elif scores[k] > 50:
                 scores[k] = 25
@@ -41,20 +41,22 @@ def molkky():
             elif scoreJoueur == 0:
                 nbZero[k] += 1
                 if nbZero[k] == 3:
-                    print(f"le joueur {numeroJoueur} a perdu")
+                    print(f"{nomsJoueur[k]} a perdu")
                     tablette[k] = None
                     scores[k] = "Elimine"
                     nbJoueursRestants = nbJoueursRestants - 1
-            if nbJoueursRestants == 1:
-                for l in range(nbj):
-                    if not (tablette[l] == None):
-                        print(f"{nomsJoueur[l]} a gagné en {cbreussi[k]} fois")  
-                        termine = True
-                        break
+                    if nbJoueursRestants == 1:
+                        for l in range(nbj):
+                            if not (tablette[l] == None):
+                                print(f"{nomsJoueur[k]} a gagné en {cbreussi[k]} fois")
+                                termine = True
+                                break
             for l in range(nbj):
                 print(f"Score {nomsJoueur[l]} = {scores[l]}")
             if termine:
                 break
         if termine:
             break
+    
+
 molkky()
