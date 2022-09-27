@@ -1,4 +1,6 @@
 def molkky():
+    """Ce fonction sert à dire les scores d'un joueur de molkky en demandant le nombre et les noms des joueurs.
+    Le programme nous dit à la fin qui a gagné et en combien de fois(tout en respectant le regles du molkky)"""
     nbj = int(input("Quel est le nombre de joueur ? "))#demande le nombre de joueurs
     nbJoueursRestants = nbj #met la variable nombre de joueurs restants à nombre de joueurs
     scores = []  # liste des scores
